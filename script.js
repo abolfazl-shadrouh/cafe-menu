@@ -191,3 +191,15 @@ document.addEventListener("DOMContentLoaded", ()=> {
 	}
 	requestAnimationFrame(raf);
 });
+
+window.addEventListener("load", () => {
+  const overlay = document.getElementById("loading-overlay");
+
+  overlay.classList.add("fade-out");
+
+  setTimeout(() => {
+    if (overlay && overlay.parentNode) {
+      overlay.parentNode.removeChild(overlay);
+    }
+  }, 1000);
+});
